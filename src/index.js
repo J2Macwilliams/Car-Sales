@@ -12,4 +12,7 @@ import './styles.scss';
 const store = createStore();
 
 const rootElement = document.getElementById('root');
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(
+    <Provider>
+        <App />
+    </Provider>, rootElement);
