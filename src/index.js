@@ -7,5 +7,7 @@ import App from './App';
 import 'bulma/css/bulma.css';
 import './styles.scss';
 
+const store = createStore();
+
 const rootElement = document.getElementById('root');
 ReactDOM.render(<App />, rootElement);
