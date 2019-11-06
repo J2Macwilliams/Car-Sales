@@ -1,6 +1,7 @@
 import React, { useReducer } from 'react';
 
 import { initialState , reducer } from './reducer/reducer';
+import {} from './actions/index';
 
 import Header from './components/Header';
 import AddedFeatures from './components/AddedFeatures';
