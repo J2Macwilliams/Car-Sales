@@ -11,7 +11,7 @@ import App from './App';
 import 'bulma/css/bulma.css';
 import './styles.scss';
 
-const store = createStore();
+const store = createStore(reducer);
 
 const rootElement = document.getElementById('root');
 ReactDOM.render(
