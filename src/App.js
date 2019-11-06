@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 
-
+import { initialState , reducer } from './reducer/reducer';
 
 import Header from './components/Header';
 import AddedFeatures from './components/AddedFeatures';
@@ -8,6 +8,7 @@ import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
 const App = () => {
+  const [state , dispatch] = useReducer(reducer , initialState)
   // const state = {
   //   additionalPrice: 0,
   //   car: {
