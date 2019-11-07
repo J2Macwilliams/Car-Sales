@@ -19,12 +19,12 @@ export const initialState = {
 
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_FEATURES:
+        case 'BUY':
             return {
                 ...state,
                 car: [...state.car.features, action.payload]
             }
-        case REMOVE_FEATURES:
+        case 'REMOVE_FEATURES':
             return {
                 car: state.car.features.filter(state.additionalFeatures.id)
             }

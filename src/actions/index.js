@@ -1,18 +1,13 @@
-export const ADD_FEATURES = "ADD_FEATURES";
-export const REMOVE_FEATURES = "REMOVE_FEATURES"
-
-export const buy = payload => {
-    console.log('buy :', payload);
+export const buy = item => {
     return {
-        type: ADD_FEATURES,
-        payload
+        type: 'BUY',
+        payload: item
     };
 };
 
-export const remove = payload => {
-    console.log('removeFeature:', payload)
+export const removeFeature = item => {
     return {
-        type: REMOVE_FEATURES,
-        payload
+        type: 'REMOVE_FEATURES',
+        payload: item
     }
 }

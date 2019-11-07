@@ -1,9 +1,7 @@
 import React from 'react';
 
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import { reducer } from './reducer/reducer';
-// import {} from './actions/index';
+
+
 
 import Header from './components/Header';
 import AddedFeatures from './components/AddedFeatures';
@@ -12,7 +10,7 @@ import Total from './components/Total';
 
 import { buy , remove } from './actions/index';
 
-const store = createStore(reducer);
+
 
 const App = props => {
   // const [state , dispatch] = useReducer(reducer , initialState)
@@ -33,31 +31,31 @@ const App = props => {
   //   ]
   // };
 
-  const removeFeature = e => {
-    // dispatch an action here to remove an item
-    e.preventDefault();
-    props.remove();
-  };
+  // const removeFeature = e => {
+  //   // dispatch an action here to remove an item
+    
+  //   remove();
+  // };
 
-  const buyItem = e => {
-    // dipsatch an action here to add an item
-    e.preventDefault();
-   props.buy();
-  };
+  // const buyItem = e => {
+  //   // dipsatch an action here to add an item
+    
+  //   buy();
+  // };
 
   return (
-    <Provider store={store} >
+    
       <div className="boxes">
         <div className="box">
           <Header car={props.car} />
-          <AddedFeatures removeFeature={removeFeature} car={props.car} />
+          <AddedFeatures  car={props.car} />
         </div>
         <div className="box">
-          <AdditionalFeatures buyItem={buyItem} additionalFeatures={props.additionalFeatures} />
+          <AdditionalFeatures  additionalFeatures={props.additionalFeatures} />
           <Total car={props.car} additionalPrice={props.additionalPrice} />
         </div>
       </div>
-    </Provider>
+    
   );
 };
 
