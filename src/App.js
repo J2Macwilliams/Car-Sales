@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { useSelector } from 'react-redux';
+import { useSelector , connect } from 'react-redux';
+
 
 import Header from './components/Header';
 import AddedFeatures from './components/AddedFeatures';
@@ -27,4 +28,11 @@ const App = () => {
   );
 };
 
-export default App;
+const MapStateToProps = state => {
+  return{
+    car: state.car,
+    addOns: state.additionalFeatures,
+    extraPrice: state.additionalPrice
+  }
+}
+export default connect(MapStateToProps, {})(App);
