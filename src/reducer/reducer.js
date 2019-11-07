@@ -16,16 +16,34 @@ export const initialState = {
 }
 
 export const reducer = (state = initialState, action) => {
+    console.log('reducer is working', action)
     switch (action.type) {
         case 'BUY': 
+        console.log('Buy', action.payload)
             return {
                 ...state,
+                additionalPrice: state.additionalPrice + action.payload.price,
                 car: {...state.car,
-                    [...state.car.features, action.payload]}
-            }
+                    
+                    features: [...state.car.features, action.payload],
+                },
+                additionalFeatures: state.additionalFeatures.filter(
+                    feature => feature.id !== action.payload.id,
+                ),
+            };
         case 'REMOVE_FEATURES':
+            console.log('Remove', action.payload)
             return {
-                car: state.car.features.filter(state.additionalFeatures.id)
+                ...state,
+                additionalPrice: state.additionalPrice - action.payload.price,
+                car: { ...state.car,
+                   
+                    features: state.car.features.filter( (feature) => { 
+                        return feature.id !== action.payload.id
+                    },
+                    ),
+                },
+                additionalFeatures: [...state.additionalFeatures, action.payload],
             }
         default:
             return state

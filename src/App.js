@@ -2,26 +2,25 @@ import React from 'react';
 
 import { useSelector , connect } from 'react-redux';
 
-
 import Header from './components/Header';
 import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
 const App = () => {
-  const vehicle = useSelector(state => state.car)
-  const addOns = (state => state.additionalFeatures)
-  const extraPrice = (state => state.additionalPrice)
+  const car = useSelector(state => state.car)
+  const addOns = useSelector(state => state.additionalFeatures)
+  const extraPrice = useSelector(state => state.additionalPrice)
   return (
 
     <div className="boxes">
       <div className="box">
-        <Header car={vehicle} />
-        <AddedFeatures car={vehicle} />
+        <Header car={car} />
+        <AddedFeatures car={car} />
       </div>
       <div className="box">
         <AdditionalFeatures additionalFeatures={addOns} />
-        <Total car={vehicle} additionalPrice={extraPrice} />
+        <Total car={car} additionalPrice={extraPrice} />
       </div>
     </div>
 
