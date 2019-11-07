@@ -26,7 +26,7 @@ export const reducer = (state = initialState, action) => {
             }
         case REMOVE_FEATURES:
             return {
-                car: state.car.features.filter(additionalFeatures.id)
+                car: state.car.features.filter(state.additionalFeatures.id)
             }
         default:
             return state

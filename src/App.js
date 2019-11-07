@@ -10,6 +10,8 @@ import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
+import { buy , remove } from './actions/index'
+
 const store = createStore(reducer);
 
 const App = props => {
@@ -31,14 +33,16 @@ const App = props => {
   //   ]
   // };
 
-  const removeFeature = item => {
+  const removeFeature = e => {
     // dispatch an action here to remove an item
-    
+    e.preventDefault();
+    props.remove();
   };
 
-  const buyItem = item => {
+  const buyItem = e => {
     // dipsatch an action here to add an item
-   
+    e.preventDefault();
+   props.buy();
   };
 
   return (
