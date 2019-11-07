@@ -10,7 +10,7 @@ import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
-import { buy , remove } from './actions/index'
+import { buy , remove } from './actions/index';
 
 const store = createStore(reducer);
 
@@ -50,10 +50,10 @@ const App = props => {
       <div className="boxes">
         <div className="box">
           <Header car={props.car} />
-          <AddedFeatures car={props.car} />
+          <AddedFeatures removeFeature={removeFeature} car={props.car} />
         </div>
         <div className="box">
-          <AdditionalFeatures additionalFeatures={props.additionalFeatures} />
+          <AdditionalFeatures buyItem={buyItem} additionalFeatures={props.additionalFeatures} />
           <Total car={props.car} additionalPrice={props.additionalPrice} />
         </div>
       </div>
