@@ -5,7 +5,7 @@ export const buy = item => {
     };
 };
 
-export const removeFeature = item => {
+export const remove = item => {
     return {
         type: 'REMOVE_FEATURES',
         payload: item
